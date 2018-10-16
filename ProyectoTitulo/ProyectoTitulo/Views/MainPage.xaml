@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProyectoTitulo"
+             x:Class="ProyectoTitulo.MainPage"
+             Title="Proyecto">
+   
+    <MasterDetailPage.Master><?Este es el datos Maestros?>
+        
+        <ContentPage Title="Maestro">
+            <StackLayout BackgroundColor="#2196F3">
+                <Label BackgroundColor="#2196F3">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Menú"
+                                  FontAttributes="Bold" 
+                                  FontSize="Large">
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Orientation="Horizontal">
+
+                    
+                    <Button Text="Login"
+                            Image="perfilMenu.png"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#2196F3"
+                            Clicked="IrAlogin">
+                    </Button>
+                    
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+
+                   
+                    <Button HorizontalOptions="FillAndExpand"
+                            Text="Registrarse"
+                            Image="addUserMenu.png"
+                            BackgroundColor="#2196F3"
+                            Clicked="IrAFormulario">
+                    </Button>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Button Text="Favoritos" 
+                            BackgroundColor="#2196F3"
+                            Image="starMenu.png"
+                            HorizontalOptions="FillAndExpand">
+
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail><!--Este es el datos detalles,
+                                se puede agregar mas contenido como page principal-->
+        <ContentPage>
+
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout>
+                        <SearchBar Placeholder="Buscar"
+                               CancelButtonColor="Black"
+                               SearchButtonPressed="SearchBar_SearchButtonPressed">
+                        </SearchBar>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

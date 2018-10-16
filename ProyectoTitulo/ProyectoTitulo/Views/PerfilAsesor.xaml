@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTitulo.Views.PerfilAsesor">
+    <ScrollView>
+        <Grid  x:Name="LayoutRoot" BackgroundColor="#2196F3">
+        <?Esto es una grilla?>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+       
+            <StackLayout Grid.Row="1">
+          
+            <StackLayout  Orientation="Vertical"
+                          BackgroundColor="#2196F3" 
+                          Opacity="0.8">
+
+                <Image Source="IconUser.png"
+                       Margin="10" HeightRequest="200"
+                       WidthRequest="200"/>
+
+                <Label Text="Luciano Alvares"
+                       HorizontalOptions="Center"
+                       FontSize="Large">
+
+                </Label>
+
+                <Label Text="La union"
+                       HorizontalOptions="Center"
+                       FontSize="Small">
+
+                </Label>
+
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Button Image="Clock.png"
+                            ContentLayout="left,10"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Reservar hora"
+                            FontSize="Micro">
+                        
+                    </Button>
+                </StackLayout>
+                
+
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" 
+                     Orientation="Vertical" 
+                     BackgroundColor="#2196F3" 
+                     Opacity="0.8"
+                     Margin="10">
+
+            <Label Text="Mis datos personales"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"></Label>
+
+            <StackLayout Orientation="Horizontal" 
+                         Margin="20,0">
+
+                <Label Text="Sexo:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="Masculino"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Edad:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="23"></Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Nacionalidad:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="Chilena"></Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Trabajos realizados:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="23"></Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Valor hora:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="$5000"></Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Puntuacion:"
+                       FontAttributes="Bold"></Label>
+                <Label Text="24"></Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                         Margin="10">
+                <Label Text="Comentarios"
+                       FontAttributes="Bold"
+                       FontSize="Small"></Label>
+
+                <StackLayout Orientation="Horizontal">
+                    <Editor 
+                        Text="Escribe algos"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        Margin="10"
+                        WidthRequest="250">
+                    </Editor>
+
+                    <StackLayout VerticalOptions="Center">
+                        <Button Image="enviarComentario.png"
+                                BackgroundColor="#2196F3"
+                                WidthRequest="40"
+                                HeightRequest="40">
+                        </Button>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </StackLayout>
+            
+    </Grid>
+    </ScrollView>
+</ContentPage>

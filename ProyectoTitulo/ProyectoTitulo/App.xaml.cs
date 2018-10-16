@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTitulo.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,12 @@ namespace ProyectoTitulo
 		{
 			InitializeComponent();
 
-			MainPage = new ProyectoTitulo.MainPage();
-		}
+            NavigationPage navPage = new NavigationPage(new ProyectoTitulo.MainPage());/*Ayuda en la navegacion de las paginas*/
+            MainPage = navPage;
 
-		protected override void OnStart ()
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

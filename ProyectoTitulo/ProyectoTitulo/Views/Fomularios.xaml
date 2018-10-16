@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTitulo.Fomularios">
+    <TabbedPage.Children>
+        
+        <ContentPage Title="Cliente">
+
+            <ScrollView>
+           
+            <Grid BackgroundColor="#2196F3"><!-- Esto es una grilla-->
+
+                <!-- Definimos las columnas que tendran
+                      y despues se enumeran-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto">
+                    </RowDefinition>
+
+                    <RowDefinition Height="Auto">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                
+                    <StackLayout Grid.Row="0" 
+                                 Orientation="Vertical" 
+                                 Margin="0,40,0,10 " 
+                                 BackgroundColor="#2196F3">
+                        
+                        <StackLayout Orientation="Vertical" 
+                                 VerticalOptions="Center" 
+                                 Margin="0,5,0,0"  
+                                 Opacity="0.8">
+                            
+                          <Image Source="User.png"
+                                 Aspect="AspectFit"
+                                 Margin="10" 
+                                 HeightRequest="200"
+                                 WidthRequest="200" 
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"/>
+                        </StackLayout>
+                        
+                    </StackLayout>
+
+                        <StackLayout Grid.Row="1" BackgroundColor="#2196F3">
+
+                            <Entry Placeholder="Rut" ></Entry>
+
+                            <Entry Placeholder="Nombre" ></Entry>
+
+                            <Entry Placeholder="Apellidos"></Entry>
+
+                            <Entry Placeholder="Correo" ></Entry>
+
+                            <Entry Placeholder="Contraseña"
+                           IsPassword="True"></Entry>
+
+                            <Button Text="Registrar" BorderRadius="25"
+                            TextColor="White" BackgroundColor="#00AE0C">
+                            </Button>
+                        </StackLayout>
+            </Grid>
+            </ScrollView>
+        </ContentPage>
+
+        <ContentPage Title="Asesor">
+
+
+
+            <ScrollView>
+
+                <StackLayout BackgroundColor="#2196F3">
+
+                    <StackLayout Orientation="Vertical" 
+                                 VerticalOptions="Center" 
+                                 Margin="0,5,0,0"  
+                                 Opacity="0.8">
+
+                        <Image Source="User.png"
+                                 Aspect="AspectFit"
+                                 Margin="10" 
+                                 HeightRequest="200"
+                                 WidthRequest="200" 
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"/>
+                    </StackLayout>
+
+
+                    <Label Text="Nombre:"
+                           FontAttributes="Bold">
+                    </Label>
+    
+                    <Entry Placeholder="Nombre"
+                           Margin="10,0"></Entry>
+
+                    <Label Text="Apellidos:"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Entry Placeholder="Paterno"
+                           Margin="10,0"></Entry>
+                    <Entry Placeholder="Materno"
+                           Margin="10,0"></Entry>
+
+                    <Label Text="Sexo:" 
+                           FontAttributes="Bold">
+                    
+                    </Label>
+
+                    <Picker Title="Seleccione su sexo" 
+                            Margin="10,0">
+                        <Picker.Items>
+
+                            <x:String>Femenino</x:String>
+                            <x:String>Masculino</x:String>
+
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Fecha nacimiento"
+                           FontAttributes="Bold"></Label>
+
+                    <DatePicker x:Name="dtp"
+                                Margin="10,0">
+
+                    </DatePicker>
+
+                    <Label Text="Nacionalidad"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Picker Title="Pais"
+                            Margin="10,0">
+                        <Picker.Items>
+
+                            <x:String>Chilena</x:String>
+                            <x:String>Argentina</x:String>
+                            <x:String>Peruana</x:String>
+                            <x:String>Colombiana</x:String>
+                        
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Region"
+                           FontAttributes="Bold">
+                    
+                    </Label>
+
+                    <Picker Title="Regiones.."  
+                            Margin="10,0">
+                        
+                        <Picker.Items>
+
+                            <x:String>I Región de Tarapacá</x:String>
+                            <x:String>II Región de Antofagasta</x:String>
+                            <x:String>III Región de Atacama</x:String>
+                            <x:String>IV Región de Coquimbo</x:String>
+
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Mis tareas:"
+                           FontAttributes="Bold"></Label>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Cocina"
+                               Margin="10,0">
+                             
+                        </Label>
+                        
+                        <Switch HorizontalOptions="EndAndExpand" 
+                                IsToggled="False">
+                            
+                        </Switch>
+                        
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Limpieza de baños"
+                               Margin="10,0">
+
+                        </Label>
+
+                        <Switch HorizontalOptions="EndAndExpand" 
+                                IsToggled="False">
+
+                        </Switch>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Planchado"
+                               Margin="10,0">
+
+                        </Label>
+
+                        <Switch HorizontalOptions="EndAndExpand" 
+                                IsToggled="False">
+
+                        </Switch>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Barrido y trapeado"
+                               Margin="10,0">
+
+                        </Label>
+
+                        <Switch HorizontalOptions="EndAndExpand" 
+                                IsToggled="False">
+
+                        </Switch>
+                    </StackLayout>
+
+                    <Label Text="Fono"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Entry Placeholder="Fono"
+                           Margin="10,0"></Entry>
+
+
+                    <Label Text="Correo"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Entry Placeholder="Email"
+                           Margin="10,0"></Entry>
+
+                    <Label Text="Contraseña"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Entry Placeholder="Contraseña"
+                           IsPassword="True"     
+                           Margin="10,0">
+                    </Entry>
+
+                    <Label Text="Sobre mi"
+                           FontAttributes="Bold"></Label>
+
+                    <StackLayout Orientation="Horizontal">
+
+
+                        <Editor TextColor="Black"
+                                BackgroundColor="White"
+                                Margin="10"
+                                WidthRequest="300"> 
+                        </Editor>
+
+                    </StackLayout>
+
+                    <Button Text="Agregar"></Button>
+
+                </StackLayout>
+                
+           </ScrollView>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

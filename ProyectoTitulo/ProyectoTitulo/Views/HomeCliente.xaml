@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTitulo.HomeCliente"
+             Title="Home">
+
+    <MasterDetailPage.Master>
+        <?Este es el datos Maestros?>
+
+        <ContentPage Title="Maestro">
+            <StackLayout BackgroundColor="#2196F3">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Menú"
+                                  FontAttributes="Bold" 
+                                  FontSize="Large">
+
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="Home" BackgroundColor="#2196F3">
+                    <!-- IrAlogin es el nombre del evento
+                                                para cambiarse a la pagina Login-->
+                </Button>
+                <Button Text="Perfil" BackgroundColor="#2196F3"
+                        Clicked="IrAPerfilCliente">
+
+                </Button>
+                <Button Text="Favoritos" BackgroundColor="#2196F3">
+
+                </Button>
+                <Button Text="Notificaciones" BackgroundColor="#2196F3">
+
+                </Button>
+
+                <Button Text="Cerra Sesion" 
+                        BackgroundColor="#2196F3"
+                        VerticalOptions="EndAndExpand"
+                        Command="{Binding LogoutCommand}">
+
+                </Button>
+            </StackLayout>
+        </ContentPage>
+
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <!--Este es el datos detalles,
+                                se puede agregar mas contenido como page principal-->
+        <ContentPage>
+            <ScrollView>
+                <StackLayout Padding="10">
+                    <Label Text="{Binding Message}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

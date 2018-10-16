@@ -9,7 +9,8 @@ using Android.OS;
 
 namespace ProyectoTitulo.Droid
 {
-    [Activity(Label = "ProyectoTitulo", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "ProyectoTitulo", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+                                                                                                                                                                                               /*Esto lo que hace es que solo sea en Vertical*/                             
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
