@@ -56,6 +56,7 @@ namespace ProyectoTitulo.ViewModel
                 }
                 else
                 {
+
                     if (User.Email == "luciano@gmail.com" && User.Password == "123456")
                     {
                         Settings.IsLoggedIn = true;
