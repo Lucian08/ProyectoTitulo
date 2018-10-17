@@ -36,6 +36,7 @@ namespace ProyectoTitulo.ViewModel
             get { return _message; }
             set { SetProperty(ref _message, value); }
         }
+
         #endregion
 
         public LoginViewModels()
@@ -44,38 +45,31 @@ namespace ProyectoTitulo.ViewModel
         }
         public async void Login()
         {
-            IsBusy = true;
+           IsBusy = true;
             Title = string.Empty;
             try
             {
-                if (User.Email != null)
+                if (User.Email == ("") || User.Password == (""))
                 {
-                    if (User.Password != null)
-                    {
-                        if (User.Email == "luciano@gmail.com" && User.Password == "123456")
-                        {
-                            Settings.IsLoggedIn = true;
-                            await Navigation.PushModalAsync(new HomeCliente());
-                        }
-                        else
-                        {
-                            Message = "Usuario o contraseña incorrecta";
-                        }
-                        IsBusy = false;
-                    }
-                    else
-                    {
-                        IsBusy = false;
-                        Message = "La contraseña es requerida";
-                    }
-
+                    IsBusy = false;
+                    Message = "Uno o 2 campos estan bacios";
                 }
                 else
                 {
+                    if (User.Email == "luciano@gmail.com" && User.Password == "123456")
+                    {
+                        Settings.IsLoggedIn = true;
+                        await Navigation.PushModalAsync(new HomeCliente());
+                    }
+                    else
+                    {
+                       
+                        Message = "Usuario o contraseña incorrecta";
+                    }
                     IsBusy = false;
-                    Message = "El email es requerido";
-                }
 
+                }  
+                 
             }
             catch (Exception e)
             {
