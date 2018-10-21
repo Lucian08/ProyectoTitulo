@@ -4,7 +4,7 @@
              x:Class="ProyectoTitulo.Login"
              Title="Volver">
 
-    <Grid  x:Name="LayoutRoot" BackgroundColor="#2196F3">
+    <Grid  x:Name="LayoutRoot" BackgroundColor="Blue">
         <?Esto es una grilla?>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,7 +19,7 @@
                            HorizontalOptions="Center"/>
 
         <StackLayout Grid.Row="1">
-            <StackLayout  BackgroundColor="#2196F3" 
+            <StackLayout  BackgroundColor="Blue" 
                           Opacity="0.8">
                 
                 <Image Source="IconUser.png"
@@ -31,7 +31,7 @@
 
         <StackLayout Grid.Row="2" 
                      Orientation="Vertical" 
-                     BackgroundColor="#2196F3" 
+                     BackgroundColor="Blue" 
                      Opacity="0.8">
             
             <StackLayout Orientation="Vertical" 
@@ -54,8 +54,8 @@
 
                 <Button  Text="Iniciar Sesión"
                          TextColor="White" 
-                         BackgroundColor="#00AE0C"
-                         BorderRadius="20"
+                         BackgroundColor="Green"
+                         CornerRadius="25"
                          FontSize="18"
                          Command="{Binding LoginCommand}">
                     <!--Clicked="IrAHome"-->

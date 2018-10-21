@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProyectoTitulo.Behaviors"
              x:Class="ProyectoTitulo.Fomularios">
     <TabbedPage.Children>
         
@@ -48,8 +49,13 @@
                             <Entry Placeholder="Nombre" ></Entry>
 
                             <Entry Placeholder="Apellidos"></Entry>
+                            
 
-                            <Entry Placeholder="Correo" ></Entry>
+                            <Entry x:Name="emailEntry" Placeholder="Correo" >
+                                <Entry.Behaviors>
+                                <local:EmailValidadorBehavior/>
+                                </Entry.Behaviors>
+                            </Entry>
 
                             <Entry Placeholder="Contraseña"
                            IsPassword="True"></Entry>
@@ -89,16 +95,16 @@
                            FontAttributes="Bold">
                     </Label>
     
-                    <Entry Placeholder="Nombre"
+                    <Entry Placeholder="Escribe tu nombre"
                            Margin="10,0"></Entry>
 
                     <Label Text="Apellidos:"
                            FontAttributes="Bold">
                     </Label>
 
-                    <Entry Placeholder="Paterno"
+                    <Entry Placeholder="Escribe tu apellido paterno"
                            Margin="10,0"></Entry>
-                    <Entry Placeholder="Materno"
+                    <Entry Placeholder="Escribe tu apellido Materno"
                            Margin="10,0"></Entry>
 
                     <Label Text="Sexo:" 
@@ -106,7 +112,8 @@
                     
                     </Label>
 
-                    <Picker Title="Seleccione su sexo" 
+                    <Picker Title="Seleccione su sexo"
+                            BackgroundColor="Azure"
                             Margin="10,0">
                         <Picker.Items>
 
@@ -116,7 +123,7 @@
                         </Picker.Items>
                     </Picker>
 
-                    <Label Text="Fecha nacimiento"
+                    <Label Text="Fecha nacimiento:"
                            FontAttributes="Bold"></Label>
 
                     <DatePicker x:Name="dtp"
@@ -124,7 +131,7 @@
 
                     </DatePicker>
 
-                    <Label Text="Nacionalidad"
+                    <Label Text="Nacionalidad:"
                            FontAttributes="Bold">
                     </Label>
 
@@ -140,7 +147,7 @@
                         </Picker.Items>
                     </Picker>
 
-                    <Label Text="Region"
+                    <Label Text="Region:"
                            FontAttributes="Bold">
                     
                     </Label>
@@ -211,31 +218,42 @@
                         </Switch>
                     </StackLayout>
 
-                    <Label Text="Fono"
+                    <Label Text="Fono:"
                            FontAttributes="Bold">
                     </Label>
 
-                    <Entry Placeholder="Fono"
-                           Margin="10,0"></Entry>
+                    <Entry Placeholder="Escribe tu fono"
+                           Keyboard="Telephone"
+                           Margin="10,0">
+
+                        <Entry.Behaviors>
+                            <local:SoloNumeroBehavior/>
+                        </Entry.Behaviors>
+
+                    </Entry>
 
 
-                    <Label Text="Correo"
+                    <Label Text="Email:"
                            FontAttributes="Bold">
                     </Label>
 
-                    <Entry Placeholder="Email"
-                           Margin="10,0"></Entry>
+                    <Entry Placeholder="Escribe tu Email"
+                           Margin="10,0">
+                        <Entry.Behaviors>
+                            <local:EmailValidadorBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
-                    <Label Text="Contraseña"
+                    <Label Text="Contraseña:"
                            FontAttributes="Bold">
                     </Label>
 
-                    <Entry Placeholder="Contraseña"
+                    <Entry Placeholder="Escribe tu Contraseña"
                            IsPassword="True"     
                            Margin="10,0">
                     </Entry>
 
-                    <Label Text="Sobre mi"
+                    <Label Text="Sobre mi:"
                            FontAttributes="Bold"></Label>
 
                     <StackLayout Orientation="Horizontal">
