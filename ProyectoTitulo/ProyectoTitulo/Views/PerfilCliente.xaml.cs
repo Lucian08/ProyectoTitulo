@@ -22,13 +22,15 @@ namespace ProyectoTitulo
         {
             HttpClient cliente = new HttpClient();
 
-            string url = "http://localhost:11627/api/Clientes";
+            string url = "http://webapiproyectotitulo.azurewebsites.net/api/Clientes";
 
             var resultado = await cliente.GetAsync(url);
 
             var json = resultado.Content.ReadAsStringAsync().Result;
 
             ClientesModel modelo = ClientesModel.FromJson(json);
+
+            
 
             
 
