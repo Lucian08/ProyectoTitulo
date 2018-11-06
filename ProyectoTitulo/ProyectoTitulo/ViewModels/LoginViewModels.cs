@@ -45,7 +45,7 @@ namespace ProyectoTitulo.ViewModel
         }
         public async void Login()
         {
-           IsBusy = true;
+            IsBusy = true;
             Title = string.Empty;
             try
             {
@@ -56,6 +56,22 @@ namespace ProyectoTitulo.ViewModel
                 }
                 else
                 {
+                    /*
+                     * consulta a la base de datos
+                     * segun pestaña
+                     * si login viene de pestaña 1
+                     * > haces la consulta a la tabla 1
+                     * 
+                     if (User.Email == "rescatado de base" && User.Password == "rescatado de base")
+
+                    consultar a la base de datos. el nivel del usuario que hizo login
+
+                    if (pestaña=1){
+                    //asumes que es asesor
+                    }else{
+                    //pestaña = 2 -> cliente
+                    }
+                    */
 
                     if (User.Email == "luciano@gmail.com" && User.Password == "123456")
                     {

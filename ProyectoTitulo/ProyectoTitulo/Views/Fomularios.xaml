@@ -44,11 +44,14 @@
 
                         <StackLayout Grid.Row="1" BackgroundColor="#2196F3">
 
-                            <Entry Placeholder="Rut" ></Entry>
+                            <Entry  x:Name="Rut"
+                                    Placeholder="Rut" ></Entry>
 
-                            <Entry Placeholder="Nombre" ></Entry>
+                            <Entry  x:Name="Nombre"
+                                    Placeholder="Nombre" ></Entry>
 
-                            <Entry Placeholder="Apellidos"></Entry>
+                            <Entry  x:Name="Apellido"
+                                    Placeholder="Apellidos"></Entry>
                             
 
                             <Entry x:Name="emailEntry" Placeholder="Correo" >
@@ -57,12 +60,17 @@
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Entry Placeholder="Contraseña"
-                           IsPassword="True"></Entry>
+                            <Entry x:Name="Clave"
+                                   Placeholder="Contraseña"
+                                   IsPassword="True"></Entry>
 
-                            <Button Text="Registrar" BorderRadius="25"
-                            TextColor="White" BackgroundColor="#00AE0C">
+                            <Button Clicked="Button_Clicked"
+                                    Text="Registrar" 
+                                    BorderRadius="25"
+                                    TextColor="White" 
+                                    BackgroundColor="#00AE0C">
                             </Button>
+                            
                         </StackLayout>
             </Grid>
             </ScrollView>
