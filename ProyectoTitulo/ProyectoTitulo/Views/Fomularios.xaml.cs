@@ -23,7 +23,7 @@ namespace ProyectoTitulo
         }
         
 
-        private  async void  Button_Clicked(object sender, EventArgs e)
+        private  async void GuardarCliente(object sender, EventArgs e)
         {
             if (Rut.Text == "" || Nombre.Text == "" || Apellido.Text == "" || emailEntry.Text == "" || Clave.Text == "")
             {
@@ -39,7 +39,7 @@ namespace ProyectoTitulo
                         Nombre = Nombre.Text,
                         Apellido = Apellido.Text,
                         Correo = emailEntry.Text,
-                        Contraseña = Clave.Text
+                        Contrasena = Clave.Text
                     };
 
                     try
@@ -60,10 +60,10 @@ namespace ProyectoTitulo
 
                     }
                     LimpiarFormulario();
-               
-                
 
-               
+                    await DisplayAlert("Bienvenido", "Hola te has registrado exitosamente", "Ok");
+
+    
             }
 
             
@@ -77,6 +77,11 @@ namespace ProyectoTitulo
             Apellido.Text = "";
             emailEntry.Text = "";
             Clave.Text = "";
+        }
+
+        private void GuardarAsesor(object sender, EventArgs e)
+        {
+
         }
     }
 

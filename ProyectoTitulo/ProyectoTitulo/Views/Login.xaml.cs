@@ -36,6 +36,10 @@ namespace ProyectoTitulo
             Navigation.PushAsync(new Fomularios());
         }
 
+        
+
+
+
         /*private void IrAHome(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new HomeCliente());

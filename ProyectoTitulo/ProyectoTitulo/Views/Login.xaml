@@ -4,7 +4,7 @@
              x:Class="ProyectoTitulo.Login"
              Title="Volver">
 
-    <Grid  x:Name="LayoutRoot" BackgroundColor="Blue">
+    <Grid  x:Name="LayoutRoot" BackgroundColor="#2196F3">
         <?Esto es una grilla?>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,11 +19,12 @@
                            HorizontalOptions="Center"/>
 
         <StackLayout Grid.Row="1">
-            <StackLayout  BackgroundColor="Blue" 
+            <StackLayout  BackgroundColor="#2196F3" 
                           Opacity="0.8">
                 
                 <Image Source="IconUser.png"
-                       Margin="10" HeightRequest="200"
+                       Margin="10" 
+                       HeightRequest="200"
                        WidthRequest="200"/>
                 
             </StackLayout>
@@ -31,23 +32,23 @@
 
         <StackLayout Grid.Row="2" 
                      Orientation="Vertical" 
-                     BackgroundColor="Blue" 
+                     BackgroundColor="#2196F3" 
                      Opacity="0.8">
             
             <StackLayout Orientation="Vertical" 
                          Margin="40,20">
 
-                
-                <Entry Text="{Binding User.Email, Mode=TwoWay}"
-                       x:Name="EmailEntry"
+
+                <Entry Text="{Binding ClientesModel.Correo, Mode=TwoWay}"
+                       x:Name="EmailLogin"
                        Keyboard="Email" 
                        Placeholder="Email"
                        FontSize="18" 
                        HorizontalTextAlignment="Start"/>
 
                 <Entry Placeholder="Contraseña"
-                       Text="{Binding User.Password, Mode=TwoWay}" 
-                       x:Name="PasswordEntry"
+                       Text="{Binding ClientesModel.Contrasena, Mode=TwoWay}" 
+                       x:Name="ClaveLogin"
                        IsPassword="True" 
                        FontSize="18" 
                        HorizontalTextAlignment="Start"/>

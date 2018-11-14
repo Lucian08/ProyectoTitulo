@@ -21,9 +21,9 @@ namespace ProyectoTitulo.ViewModel
         #endregion
 
         #region Properties
-        private User _user = new User();
+        private ClientesModel _user = new ClientesModel();
 
-        public User User
+        public ClientesModel ClientesModel
         {
             get { return _user; }
             set { SetProperty(ref _user, value); }
@@ -49,7 +49,7 @@ namespace ProyectoTitulo.ViewModel
             Title = string.Empty;
             try
             {
-                if (User.Email == ("") || User.Password == (""))
+                if (ClientesModel.Correo == ("") || ClientesModel.Contrasena == (""))
                 {
                     IsBusy = false;
                     Message = "Uno o 2 campos estan bacios";
@@ -73,17 +73,20 @@ namespace ProyectoTitulo.ViewModel
                     }
                     */
 
-                    if (User.Email == "luciano@gmail.com" && User.Password == "123456")
-                    {
-                        Settings.IsLoggedIn = true;
-                        await Navigation.PushModalAsync(new HomeCliente());
-                    }
-                    else
-                    {
-                       
-                        Message = "Usuario o contraseña incorrecta";
-                    }
-                    IsBusy = false;
+                   
+                        if (ClientesModel.Correo == "luciano@gmail.com"  && ClientesModel.Contrasena == "123456")
+                        {
+                            Settings.IsLoggedIn = true;
+                            await Navigation.PushModalAsync(new HomeCliente());
+                        }
+                        else
+                        {
+
+                            Message = "Usuario o contraseña incorrecta";
+
+                        }
+                        IsBusy = false;
+                    
 
                 }  
                  

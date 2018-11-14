@@ -64,7 +64,7 @@
                                    Placeholder="Contraseña"
                                    IsPassword="True"></Entry>
 
-                            <Button Clicked="Button_Clicked"
+                            <Button Clicked="GuardarCliente"
                                     Text="Registrar" 
                                     BorderRadius="25"
                                     TextColor="White" 
@@ -100,29 +100,36 @@
 
 
                     <Label Text="Nombre:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
     
                     <Entry Placeholder="Escribe tu nombre"
+                           x:Name="NombreAsesor"
                            Margin="10,0"></Entry>
 
                     <Label Text="Apellidos:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
 
                     <Entry Placeholder="Escribe tu apellido paterno"
+                           x:Name="ApellidoPaterno"
                            Margin="10,0"></Entry>
                     <Entry Placeholder="Escribe tu apellido Materno"
+                           x:Name="ApellidoMaterno"
                            Margin="10,0"></Entry>
 
                     <Label Text="Sexo:" 
+                           TextColor="White"
                            FontAttributes="Bold">
                     
                     </Label>
-
-                    <Picker Title="Seleccione su sexo"
-                            BackgroundColor="Azure"
+                    <!-- Pendiente-->
+                    <Picker Title="Seleccione su sexo" 
+                            BackgroundColor="#2196F3" 
                             Margin="10,0">
+                       
                         <Picker.Items>
 
                             <x:String>Femenino</x:String>
@@ -132,6 +139,7 @@
                     </Picker>
 
                     <Label Text="Fecha nacimiento:"
+                           TextColor="White"
                            FontAttributes="Bold"></Label>
 
                     <DatePicker x:Name="dtp"
@@ -140,11 +148,13 @@
                     </DatePicker>
 
                     <Label Text="Nacionalidad:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
 
                     <Picker Title="Pais"
-                            Margin="10,0">
+                            Margin="10,0"
+                            x:Name="Nacionalidad">
                         <Picker.Items>
 
                             <x:String>Chilena</x:String>
@@ -156,12 +166,14 @@
                     </Picker>
 
                     <Label Text="Region:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     
                     </Label>
 
                     <Picker Title="Regiones.."  
-                            Margin="10,0">
+                            Margin="10,0"
+                            x:Name="Region">
                         
                         <Picker.Items>
 
@@ -174,6 +186,7 @@
                     </Picker>
 
                     <Label Text="Mis tareas:"
+                           TextColor="White"
                            FontAttributes="Bold"></Label>
 
                     <StackLayout Orientation="Horizontal">
@@ -227,10 +240,12 @@
                     </StackLayout>
 
                     <Label Text="Fono:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
 
                     <Entry Placeholder="Escribe tu fono"
+                           x:Name="Fono"
                            Keyboard="Telephone"
                            Margin="10,0">
 
@@ -242,40 +257,53 @@
 
 
                     <Label Text="Email:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
 
                     <Entry Placeholder="Escribe tu Email"
-                           Margin="10,0">
+                           Margin="10,0"
+                           x:Name="CorreoCliente">
                         <Entry.Behaviors>
                             <local:EmailValidadorBehavior/>
                         </Entry.Behaviors>
                     </Entry>
 
                     <Label Text="Contraseña:"
+                           TextColor="White"
                            FontAttributes="Bold">
                     </Label>
 
                     <Entry Placeholder="Escribe tu Contraseña"
+                           x:Name="ClaveCliente"
                            IsPassword="True"     
                            Margin="10,0">
                     </Entry>
 
                     <Label Text="Sobre mi:"
+                           TextColor="White"
                            FontAttributes="Bold"></Label>
 
                     <StackLayout Orientation="Horizontal">
 
 
                         <Editor TextColor="Black"
-                                BackgroundColor="White"
+                                BackgroundColor="#2196F3"
                                 Margin="10"
-                                WidthRequest="300"> 
+                                WidthRequest="300"
+                                x:Name="SobreMi"> 
                         </Editor>
 
                     </StackLayout>
 
-                    <Button Text="Agregar"></Button>
+                    <Button Text="Agregar"
+                            Clicked="GuardarAsesor"
+                            BorderRadius="25"
+                            TextColor="White" 
+                            BackgroundColor="#00AE0C">
+                        
+                        
+                    </Button>
 
                 </StackLayout>
                 

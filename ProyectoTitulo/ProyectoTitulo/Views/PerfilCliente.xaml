@@ -83,7 +83,6 @@
 
                 <StackLayout Orientation="Horizontal">
                     <Editor 
-                        Text="Escribe algos"
                         TextColor="Black"
                         BackgroundColor="White"
                         Margin="10"
