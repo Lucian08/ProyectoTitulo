@@ -73,8 +73,34 @@ namespace ProyectoTitulo.ViewModel
                     }
                     */
 
-                   
-                        if (ClientesModel.Correo == "luciano@gmail.com"  && ClientesModel.Contrasena == "123456")
+                    /*var cliente = new ClientesModel()
+                    {
+                        Rut = Convert.ToInt32(Rut.Text),
+                        Nombre = Nombre.Text,
+                        Apellido = Apellido.Text,
+                        Correo = emailEntry.Text,
+                        Contrasena = Clave.Text
+                    };
+
+                    try
+                    {
+                        HttpClient client = new HttpClient();
+                        var url = new Uri("http://webapiproyectotitulo.azurewebsites.net/api/Clientes");
+
+                        var response = await client.PostAsync(
+                          url,
+                          new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json")
+                          );
+
+
+                    }
+                    catch (Exception es)
+                    {
+                        Console.WriteLine("Exceptionb " + es.Message);
+
+                    }*/
+
+                    if (ClientesModel.Correo =="" && ClientesModel.Contrasena == "")
                         {
                             Settings.IsLoggedIn = true;
                             await Navigation.PushModalAsync(new HomeCliente());

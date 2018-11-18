@@ -99,6 +99,16 @@
                     </StackLayout>
 
 
+                    <Label Text="Rut:"
+                           TextColor="White"
+                           FontAttributes="Bold">
+                    </Label>
+
+                    <Entry Placeholder="Escribe tu rut"
+                           x:Name="RutAsesor"
+                           Margin="10,0"></Entry>
+
+
                     <Label Text="Nombre:"
                            TextColor="White"
                            FontAttributes="Bold">
@@ -128,7 +138,9 @@
                     <!-- Pendiente-->
                     <Picker Title="Seleccione su sexo" 
                             BackgroundColor="#2196F3" 
-                            Margin="10,0">
+                            Margin="10,0"
+                            x:Name="SexoAsesor"
+                            SelectedIndexChanged="SexoAsesor_SelectedIndexChanged">
                        
                         <Picker.Items>
 
@@ -142,7 +154,7 @@
                            TextColor="White"
                            FontAttributes="Bold"></Label>
 
-                    <DatePicker x:Name="dtp"
+                    <DatePicker x:Name="dtpFechaNacimiento"
                                 Margin="10,0">
 
                     </DatePicker>
@@ -165,15 +177,15 @@
                         </Picker.Items>
                     </Picker>
 
-                    <Label Text="Region:"
+                    <Label Text="Comuna:"
                            TextColor="White"
                            FontAttributes="Bold">
                     
                     </Label>
 
-                    <Picker Title="Regiones.."  
+                    <Picker Title="Comunas.."  
                             Margin="10,0"
-                            x:Name="Region">
+                            x:Name="Comuna">
                         
                         <Picker.Items>
 
@@ -181,6 +193,26 @@
                             <x:String>II Región de Antofagasta</x:String>
                             <x:String>III Región de Atacama</x:String>
                             <x:String>IV Región de Coquimbo</x:String>
+
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Dias de trabajo:"
+                           TextColor="White"
+                           FontAttributes="Bold">
+
+                    </Label>
+
+                    <Picker Title="Dias.."  
+                            Margin="10,0"
+                            x:Name="DiasTrabajo">
+
+                        <Picker.Items>
+
+                            <x:String>Lunes</x:String>
+                            <x:String>Martes</x:String>
+                            <x:String>Miercoles</x:String>
+                            <x:String>Jueves</x:String>
 
                         </Picker.Items>
                     </Picker>
@@ -263,7 +295,7 @@
 
                     <Entry Placeholder="Escribe tu Email"
                            Margin="10,0"
-                           x:Name="CorreoCliente">
+                           x:Name="CorreoAsesor">
                         <Entry.Behaviors>
                             <local:EmailValidadorBehavior/>
                         </Entry.Behaviors>
