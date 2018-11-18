@@ -24,9 +24,6 @@ namespace ProyectoTitulo
         [JsonProperty("Comuna")]
         public AsesorModelComuna Comuna { get; set; }
 
-        [JsonProperty("Horario")]
-        public Horario Horario { get; set; }
-
         [JsonProperty("PuntuacioAsesor")]
         public object[] PuntuacioAsesor { get; set; }
 
@@ -38,6 +35,9 @@ namespace ProyectoTitulo
 
         [JsonProperty("TareaAsesor")]
         public object[] TareaAsesor { get; set; }
+
+        [JsonProperty("DiasAsesor")]
+        public DiasAsesor[] DiasAsesor { get; set; }
 
         [JsonProperty("Id")]
         public long AsesorModelId { get; set; }
@@ -68,9 +68,6 @@ namespace ProyectoTitulo
 
         [JsonProperty("IdComuna")]
         public long IdComuna { get; set; }
-
-        [JsonProperty("IdHorario")]
-        public long IdHorario { get; set; }
 
         [JsonProperty("ValorHora")]
         public long ValorHora { get; set; }
@@ -165,23 +162,47 @@ namespace ProyectoTitulo
         public string Nombre { get; set; }
     }
 
-    public partial class Horario
+    public partial class DiasAsesor
     {
         [JsonProperty("$id")]
         [JsonConverter(typeof(ParseStringConverter))]
         public long Id { get; set; }
 
         [JsonProperty("Asesor")]
-        public Asesor[] Asesor { get; set; }
-
-        [JsonProperty("Id")]
-        public long HorarioId { get; set; }
-
-        [JsonProperty("CantidadHoras")]
-        public long CantidadHoras { get; set; }
+        public Asesor Asesor { get; set; }
 
         [JsonProperty("Dias")]
-        public string Dias { get; set; }
+        public Dias Dias { get; set; }
+
+        [JsonProperty("Id")]
+        public long DiasAsesorId { get; set; }
+
+        [JsonProperty("IdAsesor")]
+        public long IdAsesor { get; set; }
+
+        [JsonProperty("IdDia")]
+        public long IdDia { get; set; }
+    }
+
+    public partial class Dias
+    {
+        [JsonProperty("$id")]
+        [JsonConverter(typeof(ParseStringConverter))]
+        public long Id { get; set; }
+
+        [JsonProperty("DiasAsesor")]
+        public Asesor[] DiasAsesor { get; set; }
+
+        [JsonProperty("Id")]
+        public long DiasId { get; set; }
+
+        [JsonProperty("Dia")]
+        public string Dia { get; set; }
+    }
+
+    public partial class AsesorModel
+    {
+        public static AsesorModel[] FromJson(string json) => JsonConvert.DeserializeObject<AsesorModel[]>(json, ProyectoTitulo.Converter.Settings);
     }
 
    
