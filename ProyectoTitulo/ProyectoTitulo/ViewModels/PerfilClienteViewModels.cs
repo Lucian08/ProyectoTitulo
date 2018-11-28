@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 namespace ProyectoTitulo.ViewModels
 {
   
-    public class ClientesModel
+   /* public class ClientesModel
     {
 
         public ObservableCollection<ClientesModel> clientes { get; set; }
@@ -32,5 +32,5 @@ namespace ProyectoTitulo.ViewModels
             clientes.Add(modelo);
 
         }
-    }
+    }*/
 }

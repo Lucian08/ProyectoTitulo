@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoTitulo.Models;
+using ProyectoTitulo.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -14,14 +16,28 @@ namespace ProyectoTitulo
     public partial class Fomularios : TabbedPage
     {
 
+ 
         public Fomularios()
         {
             InitializeComponent();
 
             dtpFechaNacimiento.MinimumDate = new DateTime(1990, 1, 1);
             dtpFechaNacimiento.MaximumDate = new DateTime(2000, 12, 31);
+            CargarComunaAsync();
+        }
+        private async Task CargarComunaAsync() {
+            
+            List<Comuna> listado =   await ServiceConnect.GetAllAsync<Comuna>("Comunas");/*Aqui se cargan todas las comunas desde la DB*/
+            Console.WriteLine(listado.Count());
+            foreach (var comuna in listado) {
+                //ControlXamarin
+                Console.WriteLine(comuna.Nombre);
+                PickerComuna.Items.Add(comuna.Nombre);
+               
+            }
         }
 
+        
 
         private async void GuardarCliente(object sender, EventArgs e)
         {
@@ -33,7 +49,7 @@ namespace ProyectoTitulo
             else
             {
 
-                var cliente = new ClientesModel()
+                var cliente = new Cliente()
                 {
                     Rut = Convert.ToInt32(Rut.Text),
                     Nombre = Nombre.Text,
@@ -42,23 +58,8 @@ namespace ProyectoTitulo
                     Contrasena = Clave.Text
                 };
 
-                try
-                {
-                    HttpClient client = new HttpClient();
-                    var url = new Uri("http://webapiproyectotitulo.azurewebsites.net/api/Clientes");
-
-                    var response = await client.PostAsync(
-                      url,
-                      new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(cliente), Encoding.UTF8, "application/json")
-                      );
-
-
-                }
-                catch (Exception es)
-                {
-                    Console.WriteLine("Exceptionb " + es.Message);
-
-                }
+                await ServiceConnect.PostAsync("Clientes", cliente);
+                 
                 LimpiarFormulario();
 
                 await DisplayAlert("Bienvenido", "Hola te has registrado exitosamente", "Ok");
@@ -79,7 +80,7 @@ namespace ProyectoTitulo
             Clave.Text = "";
         }
 
-       
+
 
         private async void GuardarAsesor(object sender, EventArgs e)
         {
@@ -91,16 +92,16 @@ namespace ProyectoTitulo
             else
             {
 
-                var asesors = new AsesorModel()
+                var asesors = new Asesor()
                 {
                     Rut = Convert.ToInt32(RutAsesor.Text),
                     Nombre = NombreAsesor.Text,
                     ApellidoPaterno = ApellidoPaterno.Text,
                     ApellidoMaterno = ApellidoMaterno.Text,
-                    /*Sexo = Convert.ToInt32(SexoAsesor.),*/
-                    /*FechaNacimiento = dtpFechaNacimiento.SetValue.Date, ¡¡¡Aun falta!!!*/
-                    /*Guardar nacionalida falta*/
-                    /*Comuna=Convert.ToInt32(Comuna.ItemsSource),*/
+                    Sexo = (SexoAsesor.SelectedIndex == 0) ? "Femenino" : "Masculino",
+                    /*FechaNacimiento = dtpFechaNacimiento.SetValue.Date,*/
+                    Nacionalidad = Nacionalidad.SelectedItem.ToString(),
+                    /*Comuna= Convert.ToInt32(PickerComuna.SelectedItem),*/
                     /*Guardar horario falta*/
                     Fono = Convert.ToInt32(Fono.Text),
                     Correo = CorreoAsesor.Text,
@@ -108,24 +109,10 @@ namespace ProyectoTitulo
 
 
                 };
+                await DisplayAlert ("Prueba" , "su sexo" + SexoAsesor, "ok");
 
-                try
-                {
-                    HttpClient client = new HttpClient();
-                    var url = new Uri("http://webapiproyectotitulo.azurewebsites.net/api/Asesors");
+                await ServiceConnect.PostAsync("Asesors", asesors);
 
-                    var response = await client.PostAsync(
-                      url,
-                      new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(asesors), Encoding.UTF8, "application/json")
-                      );
-
-
-                }
-                catch (Exception es)
-                {
-                    Console.WriteLine("Exceptionb " + es.Message);
-
-                }
                 LimpiarFormulario();
 
                 await DisplayAlert("Bienvenido", "Hola te has registrado exitosamente", "Ok");
@@ -135,11 +122,11 @@ namespace ProyectoTitulo
             }
         }
 
-        private void SexoAsesor_SelectedIndexChanged(object sender, EventArgs e)
+       /* private void SexoAsesor_SelectedIndexChanged(object sender, EventArgs e)
         {
             var sexoseleccionado = SexoAsesor.SelectedItem as string;
             DisplayAlert("Selección", sexoseleccionado, "Ok");
-        }
+        }*/
 
        
     }

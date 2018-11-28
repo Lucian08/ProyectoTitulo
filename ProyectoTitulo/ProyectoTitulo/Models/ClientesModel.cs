@@ -6,7 +6,7 @@
 //
 //    var clientesModel = ClientesModel.FromJson(jsonString);
 
-namespace ProyectoTitulo
+/*namespace ProyectoTitulo
 {
     using System;
     using System.Collections.Generic;
@@ -71,3 +71,4 @@ namespace ProyectoTitulo
         };
     }
 }
+*/

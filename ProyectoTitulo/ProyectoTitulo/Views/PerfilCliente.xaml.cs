@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTitulo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -16,9 +17,9 @@ namespace ProyectoTitulo
 		public PerfilCliente ()
 		{
 			InitializeComponent ();
-            TraerCliente();
+           /* TraerCliente();*/
 		}
-        private async void TraerCliente()/*Este metodo trae la informacion ingresada del cliente*/
+        /*private async void TraerCliente()Este metodo trae la informacion ingresada del cliente
         {
             HttpClient cliente = new HttpClient();
 
@@ -28,12 +29,12 @@ namespace ProyectoTitulo
 
             var json = resultado.Content.ReadAsStringAsync().Result;
 
-            ClientesModel modelo = ClientesModel.FromJson(json);
+            Cliente modelo = Cliente.FromJson(json);
 
             
 
             
-        }
+        }*/
 
     }
 }

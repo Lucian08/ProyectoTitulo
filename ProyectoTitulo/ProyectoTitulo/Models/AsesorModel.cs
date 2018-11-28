@@ -6,7 +6,7 @@
 //
 //    var asesorModel = AsesorModel.FromJson(jsonString);
 
-namespace ProyectoTitulo
+/*namespace ProyectoTitulo
 {
     using System;
     using System.Collections.Generic;
@@ -17,17 +17,13 @@ namespace ProyectoTitulo
 
     public partial class AsesorModel
     {
-        [JsonProperty("$id")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Id { get; set; }
 
-        [JsonProperty("Comuna")]
+        
         public AsesorModelComuna Comuna { get; set; }
 
-        [JsonProperty("PuntuacioAsesor")]
         public object[] PuntuacioAsesor { get; set; }
 
-        [JsonProperty("PuntuacioCliente")]
         public object[] PuntuacioCliente { get; set; }
 
         [JsonProperty("Servicio")]
@@ -85,53 +81,10 @@ namespace ProyectoTitulo
         public string Contrasena { get; set; }
     }
 
-    public partial class AsesorModelComuna
-    {
-        [JsonProperty("$id")]
-        [JsonConverter(typeof(ParseStringConverter))]
-        public long Id { get; set; }
+    
+ 
 
-        [JsonProperty("Asesor")]
-        public Asesor[] Asesor { get; set; }
-
-        [JsonProperty("Region")]
-        public Region Region { get; set; }
-
-        [JsonProperty("Direccion")]
-        public object[] Direccion { get; set; }
-
-        [JsonProperty("Id")]
-        public long ComunaId { get; set; }
-
-        [JsonProperty("IdRegion")]
-        public long IdRegion { get; set; }
-
-        [JsonProperty("Nombre")]
-        public string Nombre { get; set; }
-    }
-
-    public partial class Asesor
-    {
-        [JsonProperty("$ref")]
-        [JsonConverter(typeof(ParseStringConverter))]
-        public long Ref { get; set; }
-    }
-
-    public partial class Region
-    {
-        [JsonProperty("$id")]
-        [JsonConverter(typeof(ParseStringConverter))]
-        public long Id { get; set; }
-
-        [JsonProperty("Comuna")]
-        public ComunaElement[] Comuna { get; set; }
-
-        [JsonProperty("Id")]
-        public long RegionId { get; set; }
-
-        [JsonProperty("Region1")]
-        public string Region1 { get; set; }
-    }
+   
 
     public partial class ComunaElement
     {
@@ -238,3 +191,4 @@ namespace ProyectoTitulo
         public static readonly ParseStringConverter Singleton = new ParseStringConverter();
     }
 }
+*/

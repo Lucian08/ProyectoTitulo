@@ -139,14 +139,14 @@
                     <Picker Title="Seleccione su sexo" 
                             BackgroundColor="#2196F3" 
                             Margin="10,0"
-                            x:Name="SexoAsesor"
-                            SelectedIndexChanged="SexoAsesor_SelectedIndexChanged">
+                            x:Name="SexoAsesor">
+                        <!--SelectedIndexChanged="SexoAsesor_SelectedIndexChanged"--> 
                        
                         <Picker.Items>
-
-                            <x:String>Femenino</x:String>
-                            <x:String>Masculino</x:String>
-
+                            
+                                <x:String>Femenino</x:String>
+                                <x:String>Masculino</x:String>
+                                
                         </Picker.Items>
                     </Picker>
 
@@ -185,16 +185,8 @@
 
                     <Picker Title="Comunas.."  
                             Margin="10,0"
-                            x:Name="Comuna">
+                            x:Name="PickerComuna">
                         
-                        <Picker.Items>
-
-                            <x:String>I Región de Tarapacá</x:String>
-                            <x:String>II Región de Antofagasta</x:String>
-                            <x:String>III Región de Atacama</x:String>
-                            <x:String>IV Región de Coquimbo</x:String>
-
-                        </Picker.Items>
                     </Picker>
 
                     <Label Text="Dias de trabajo:"

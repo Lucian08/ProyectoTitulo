@@ -39,7 +39,7 @@
                          Margin="40,20">
 
 
-                <Entry Text="{Binding ClientesModel.Correo, Mode=TwoWay}"
+                <Entry Text="{Binding Cliente.Correo, Mode=TwoWay}"
                        x:Name="EmailLogin"
                        Keyboard="Email" 
                        Placeholder="Email"
@@ -47,7 +47,7 @@
                        HorizontalTextAlignment="Start"/>
 
                 <Entry Placeholder="Contraseña"
-                       Text="{Binding ClientesModel.Contrasena, Mode=TwoWay}" 
+                       Text="{Binding Cliente.Contrasena, Mode=TwoWay}" 
                        x:Name="ClaveLogin"
                        IsPassword="True" 
                        FontSize="18" 

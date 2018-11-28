@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,4 +11,4 @@ namespace ProyectoTitulo.Models
         public string Password { get; set; }
        
     }
-}
+}*/

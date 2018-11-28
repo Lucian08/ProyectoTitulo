@@ -21,9 +21,9 @@ namespace ProyectoTitulo.ViewModel
         #endregion
 
         #region Properties
-        private ClientesModel _user = new ClientesModel();
+        private Cliente _user = new Cliente();
 
-        public ClientesModel ClientesModel
+        public Cliente Cliente
         {
             get { return _user; }
             set { SetProperty(ref _user, value); }
@@ -49,7 +49,7 @@ namespace ProyectoTitulo.ViewModel
             Title = string.Empty;
             try
             {
-                if (ClientesModel.Correo == ("") || ClientesModel.Contrasena == (""))
+                if (Cliente.Correo == ("") || Cliente.Contrasena == (""))
                 {
                     IsBusy = false;
                     Message = "Uno o 2 campos estan bacios";
@@ -100,7 +100,7 @@ namespace ProyectoTitulo.ViewModel
 
                     }*/
 
-                    if (ClientesModel.Correo =="" && ClientesModel.Contrasena == "")
+                    if (Cliente.Correo == "luciano@gmail.com" && Cliente.Contrasena == "123")
                         {
                             Settings.IsLoggedIn = true;
                             await Navigation.PushModalAsync(new HomeCliente());
