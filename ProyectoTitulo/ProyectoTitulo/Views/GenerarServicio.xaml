@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTitulo.Views.GenerarServicio">
+    <Grid  x:Name="LayoutRoot" BackgroundColor="#2196F3">
+        <?Esto es una grilla?>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+                
+            </ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>--> 
+        <StackLayout Grid.Row="1" 
+                     Orientation="Vertical" 
+                     BackgroundColor="#2196F3" 
+                     Opacity="0.8"
+                     Margin="10">
+
+            <Label Text="Agendar Servicio"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   Margin="20"></Label>
+
+            <StackLayout Orientation="Horizontal" 
+                         Margin="20,0">
+
+                <Label Text="Asesor"
+                       FontAttributes="Bold">
+                    
+                </Label>
+                <Picker Title="Busque a su asesor" 
+                        BackgroundColor="#2196F3" 
+                        Margin="10,0"
+                        x:Name="AsesorPicker">
+
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Fecha:"
+                       FontAttributes="Bold"></Label>
+                <DatePicker x:Name="FechaServicioDtp">
+                    
+                </DatePicker>
+
+            </StackLayout>
+
+
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Cantidad de horas:"
+                       FontAttributes="Bold"></Label>
+                
+                <Picker Title="Cantidad de horas"
+                        x:Name="HorasPicker"></Picker>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,0">
+                <Label Text="Hora inicio y termino"
+                       FontAttributes="Bold"></Label>
+
+                <TimePicker Grid.Row="1"></TimePicker>
+                <TimePicker Grid.Row="1" Grid.Column="1"></TimePicker>
+                
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="10">
+                <Label Text="Total:"
+                       FontAttributes="Bold"
+                       FontSize="Small"></Label>
+
+                <Label Text="$5000">
+
+                </Label>
+            </StackLayout>
+
+            <Button Text="Guardar" Clicked="GuardarServicio"></Button>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

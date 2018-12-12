@@ -8,7 +8,10 @@ namespace ProyectoTitulo.Service
 {
     public class ServiceConnect
     {
-        private const string BASE = "http://webapiproyectotitulo.azurewebsites.net/api/";
+        private const string BASE = "http://gonaniporyecto.azurewebsites.net/api/";
+
+        public IEnumerable<object> Asesor { get; internal set; }
+
         //public static int PORT = 80;
 
 
@@ -30,7 +33,12 @@ namespace ProyectoTitulo.Service
             }
             return response;
 
-        } 
+        }
+
+        internal static object Table<T>()
+        {
+            throw new NotImplementedException();
+        }
 
         public static async System.Threading.Tasks.Task<List<T>> GetAllAsync<T>(string path)//path = "comunas"
         {

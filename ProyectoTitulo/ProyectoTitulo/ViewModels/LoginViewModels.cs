@@ -103,7 +103,7 @@ namespace ProyectoTitulo.ViewModel
                     if (Cliente.Correo == "luciano@gmail.com" && Cliente.Contrasena == "123")
                         {
                             Settings.IsLoggedIn = true;
-                            await Navigation.PushModalAsync(new HomeCliente());
+                            await Navigation.PushModalAsync (new HomeCliente());
                         }
                         else
                         {

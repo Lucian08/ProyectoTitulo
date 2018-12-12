@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ProyectoTitulo"
              x:Class="ProyectoTitulo.MainPage"
-             Title="Proyecto">
+             Title="GoNani">
    
     <MasterDetailPage.Master><?Este es el datos Maestros?>
         
@@ -43,6 +43,8 @@
                     </Button>
                 </StackLayout>
 
+              
+
                 <StackLayout Orientation="Horizontal">
 
                     <Button Text="Favoritos" 
@@ -69,8 +71,41 @@
                                SearchButtonPressed="SearchBar_SearchButtonPressed">
                         </SearchBar>
                     </StackLayout>
+                    <ListView ItemsSource="{Binding AsesorList}"
+                              HasUnevenRows="True"
+                              BackgroundColor="#ecf0f1"
+                              SeparatorVisibility="None"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="6,4,6,4"
+                                                 BackgroundColor="White">
+                                        
+                                        <Label Text="{Binding Nombre}"
+                                               Margin="8"
+                                               FontAttributes="Bold"
+                                               FontSize="Medium">
+                                            
+                                        </Label>
+                                        <Label Text="{Binding ApellidoPaterno}"
+                                               Margin="8,2,8,4"
+                                               FontSize="Small">
+                                            
+                                        </Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                            
+                        </ListView.ItemTemplate>
+                        
+                    </ListView>
                 </StackLayout>
+                
             </ScrollView>
+           
         </ContentPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

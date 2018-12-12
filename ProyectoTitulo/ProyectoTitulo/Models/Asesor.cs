@@ -19,7 +19,7 @@ namespace ProyectoTitulo.Models
         {
             
         }
-    
+
         public int Id { get; set; }
         public int Rut { get; set; }
         public byte[] Foto { get; set; }
@@ -35,8 +35,7 @@ namespace ProyectoTitulo.Models
         public int Fono { get; set; }
         public string Correo { get; set; }
         public string Contrasena { get; set; }
-    
+
         public virtual Comuna Comuna { get; set; }
-        
     }
 }

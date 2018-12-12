@@ -113,7 +113,7 @@
                            TextColor="White"
                            FontAttributes="Bold">
                     </Label>
-    
+
                     <Entry Placeholder="Escribe tu nombre"
                            x:Name="NombreAsesor"
                            Margin="10,0"></Entry>
@@ -124,31 +124,28 @@
                     </Label>
 
                     <Entry Placeholder="Escribe tu apellido paterno"
-                           x:Name="ApellidoPaterno"
+                           x:Name="ApellidoPaternoAs"
                            Margin="10,0"></Entry>
                     <Entry Placeholder="Escribe tu apellido Materno"
-                           x:Name="ApellidoMaterno"
+                           x:Name="ApellidoMaternoAs"
                            Margin="10,0"></Entry>
 
                     <Label Text="Sexo:" 
                            TextColor="White"
                            FontAttributes="Bold">
-                    
+
                     </Label>
+                    
+                    
                     <!-- Pendiente-->
+                    
                     <Picker Title="Seleccione su sexo" 
                             BackgroundColor="#2196F3" 
                             Margin="10,0"
-                            x:Name="SexoAsesor">
-                        <!--SelectedIndexChanged="SexoAsesor_SelectedIndexChanged"--> 
-                       
-                        <Picker.Items>
-                            
-                                <x:String>Femenino</x:String>
-                                <x:String>Masculino</x:String>
-                                
-                        </Picker.Items>
+                            x:Name="SexoAsesorPicker">
+
                     </Picker>
+                        
 
                     <Label Text="Fecha nacimiento:"
                            TextColor="White"
@@ -164,104 +161,56 @@
                            FontAttributes="Bold">
                     </Label>
 
+                   
                     <Picker Title="Pais"
                             Margin="10,0"
-                            x:Name="Nacionalidad">
-                        <Picker.Items>
-
-                            <x:String>Chilena</x:String>
-                            <x:String>Argentina</x:String>
-                            <x:String>Peruana</x:String>
-                            <x:String>Colombiana</x:String>
+                            x:Name="NacionalidadPicker">
                         
-                        </Picker.Items>
                     </Picker>
 
                     <Label Text="Comuna:"
                            TextColor="White"
                            FontAttributes="Bold">
-                    
+
                     </Label>
 
-                    <Picker Title="Comunas.."  
-                            Margin="10,0"
-                            x:Name="PickerComuna">
-                        
-                    </Picker>
 
-                    <Label Text="Dias de trabajo:"
+                    
+                    <Picker x:Name="comunas" 
+                            Title="Comunas.." 
+                            ItemsSource="{Binding ComunaList}"
+                            ItemDisplayBinding="{Binding Nombre}"
+                            SelectedItem="{Binding SelectedComuna}"/>
+                    <Label Text="{Binding Id}" IsVisible="False" x:Name="IdComunaLabel"/>
+                    <Label Text="{Binding Nombre}"/>
+
+
+                    <Label Text="Valor de hora:"
                            TextColor="White"
                            FontAttributes="Bold">
-
                     </Label>
 
-                    <Picker Title="Dias.."  
-                            Margin="10,0"
-                            x:Name="DiasTrabajo">
+                    <Entry Placeholder="Escribe el valor tu hora:"
+                           x:Name="PrecioHora"
+                           Margin="10,0"></Entry>
 
-                        <Picker.Items>
 
-                            <x:String>Lunes</x:String>
-                            <x:String>Martes</x:String>
-                            <x:String>Miercoles</x:String>
-                            <x:String>Jueves</x:String>
-
-                        </Picker.Items>
-                    </Picker>
-
-                    <Label Text="Mis tareas:"
+                    <Label Text="Sobre mi:"
                            TextColor="White"
                            FontAttributes="Bold"></Label>
 
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Cocina"
-                               Margin="10,0">
-                             
-                        </Label>
-                        
-                        <Switch HorizontalOptions="EndAndExpand" 
-                                IsToggled="False">
-                            
-                        </Switch>
-                        
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Limpieza de baños"
-                               Margin="10,0">
 
-                        </Label>
 
-                        <Switch HorizontalOptions="EndAndExpand" 
-                                IsToggled="False">
-
-                        </Switch>
+                        <Editor TextColor="Black"
+                                BackgroundColor="#2196F3"
+                                Margin="10"
+                                WidthRequest="300"
+                                x:Name="SobreMi">
+                        </Editor>
 
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Planchado"
-                               Margin="10,0">
-
-                        </Label>
-
-                        <Switch HorizontalOptions="EndAndExpand" 
-                                IsToggled="False">
-
-                        </Switch>
-
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Barrido y trapeado"
-                               Margin="10,0">
-
-                        </Label>
-
-                        <Switch HorizontalOptions="EndAndExpand" 
-                                IsToggled="False">
-
-                        </Switch>
-                    </StackLayout>
 
                     <Label Text="Fono:"
                            TextColor="White"
@@ -299,39 +248,25 @@
                     </Label>
 
                     <Entry Placeholder="Escribe tu Contraseña"
-                           x:Name="ClaveCliente"
+                           x:Name="ClaveAsesor"
                            IsPassword="True"     
                            Margin="10,0">
                     </Entry>
 
-                    <Label Text="Sobre mi:"
-                           TextColor="White"
-                           FontAttributes="Bold"></Label>
 
-                    <StackLayout Orientation="Horizontal">
-
-
-                        <Editor TextColor="Black"
-                                BackgroundColor="#2196F3"
-                                Margin="10"
-                                WidthRequest="300"
-                                x:Name="SobreMi"> 
-                        </Editor>
-
-                    </StackLayout>
 
                     <Button Text="Agregar"
                             Clicked="GuardarAsesor"
                             BorderRadius="25"
                             TextColor="White" 
                             BackgroundColor="#00AE0C">
-                        
-                        
+
+
                     </Button>
 
                 </StackLayout>
-                
-           </ScrollView>
+
+            </ScrollView>
         </ContentPage>
     </TabbedPage.Children>
 </TabbedPage>

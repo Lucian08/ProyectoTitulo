@@ -1,4 +1,5 @@
 ﻿using ProyectoTitulo.ViewModel;
+using ProyectoTitulo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace ProyectoTitulo
         private void IrAPerfilCliente(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new PerfilCliente());
+        }
+
+        private void IrAGenerarServicio(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new GenerarServicio());
+
         }
     }
 }

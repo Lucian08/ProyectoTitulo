@@ -28,7 +28,8 @@
                         Clicked="IrAPerfilCliente">
 
                 </Button>
-                <Button Text="Favoritos" BackgroundColor="#2196F3">
+                <Button Text="Servicio" BackgroundColor="#2196F3"
+                        Clicked="IrAGenerarServicio">
 
                 </Button>
                 <Button Text="Notificaciones" BackgroundColor="#2196F3">
