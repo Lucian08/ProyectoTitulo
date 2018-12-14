@@ -1,4 +1,5 @@
 ﻿using ProyectoTitulo.Models;
+using ProyectoTitulo.MyDataSource;
 using ProyectoTitulo.Service;
 using ProyectoTitulo.ViewModels;
 using System;
@@ -24,7 +25,7 @@ namespace ProyectoTitulo
         {
             InitializeComponent();
 
-            dtpFechaNacimiento.MinimumDate = new DateTime(1990, 1, 1);
+            dtpFechaNacimiento.MinimumDate = new DateTime(1970, 1, 1);
             dtpFechaNacimiento.MaximumDate = new DateTime(2000, 12, 31);
 
             CargarComunaAsync();
@@ -55,6 +56,9 @@ namespace ProyectoTitulo
             //}
         }
 
+
+
+    
         private void CargarSexoPicker()/*Carga el picker mostrando los sexo*/
         {
 
@@ -86,6 +90,23 @@ namespace ProyectoTitulo
             Clave.Text = "";
         }
 
+        public void LimpiarFormularioAsesor()
+        {
+            RutAsesor.Text = "";
+            NombreAsesor.Text = "";
+            ApellidoMaternoAs.Text = "";
+            ApellidoPaternoAs.Text = "";
+            SexoAsesorPicker.ItemsSource.Clear();
+            NacionalidadPicker.ItemsSource.Clear();
+            comunas.ItemsSource.Clear();
+            PrecioHora.Text = "";
+            SobreMi.Text = "";
+            Fono.Text = "";
+            CorreoAsesor.Text="";
+            ClaveAsesor.Text = "";
+
+        }
+
 
 
         private async void GuardarCliente(object sender, EventArgs e)
@@ -109,10 +130,12 @@ namespace ProyectoTitulo
                 };
 
                 await ServiceConnect.PostAsync("Clientes", cliente);
-                 
+
+                await DisplayAlert("Bienvenido " + Nombre.Text, "Te has registrado exitosamente", "Ok");
+
                 LimpiarFormulario();
 
-                await DisplayAlert("Bienvenido", "Hola te has registrado exitosamente", "Ok");
+                
 
 
             }
@@ -157,10 +180,11 @@ namespace ProyectoTitulo
 
                 await ServiceConnect.PostAsync("Asesors", asesor);
 
+                
+           
+                await DisplayAlert("Bienvenido " + NombreAsesor.Text, "Te has registrado exitosamente", "Ok");
 
-                await DisplayAlert("Bienvenido" + NombreAsesor.Text, "te has registrado exitosamente", "Ok");
-
-
+                LimpiarFormularioAsesor();
             }
         }
     }

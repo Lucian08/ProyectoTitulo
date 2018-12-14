@@ -45,16 +45,32 @@
                         <StackLayout Grid.Row="1" BackgroundColor="#2196F3">
 
                             <Entry  x:Name="Rut"
-                                    Placeholder="Rut" ></Entry>
+                                    Placeholder="Rut"
+                                    Keyboard="Numeric"
+                                    PlaceholderColor="White">
+                                
+                                <Entry.Behaviors>
+                                <local:SoloNumeroBehavior/>
+                                </Entry.Behaviors>
+
+
+                            </Entry>
 
                             <Entry  x:Name="Nombre"
-                                    Placeholder="Nombre" ></Entry>
+                                    Placeholder="Nombre"
+                                    Keyboard="Text"
+                                    PlaceholderColor="White"></Entry>
 
                             <Entry  x:Name="Apellido"
-                                    Placeholder="Apellidos"></Entry>
+                                    Keyboard="Text"
+                                    Placeholder="Apellidos"
+                                    PlaceholderColor="White"></Entry>
                             
 
-                            <Entry x:Name="emailEntry" Placeholder="Correo" >
+                            <Entry x:Name="emailEntry" 
+                                   Keyboard="Email"
+                                   Placeholder="Correo"
+                                   PlaceholderColor="White">
                                 <Entry.Behaviors>
                                 <local:EmailValidadorBehavior/>
                                 </Entry.Behaviors>
@@ -62,7 +78,14 @@
 
                             <Entry x:Name="Clave"
                                    Placeholder="Contraseña"
-                                   IsPassword="True"></Entry>
+                                    Keyboard="Text"
+                                   IsPassword="True"
+                                   PlaceholderColor="White">
+
+                            <Entry.Behaviors>
+                                <local:PasswordValidatorBehavior/>
+                            </Entry.Behaviors>
+                           </Entry>
 
                             <Button Clicked="GuardarCliente"
                                     Text="Registrar" 
@@ -105,6 +128,7 @@
                     </Label>
 
                     <Entry Placeholder="Escribe tu rut"
+                           Keyboard="Numeric"
                            x:Name="RutAsesor"
                            Margin="10,0"></Entry>
 
@@ -115,6 +139,7 @@
                     </Label>
 
                     <Entry Placeholder="Escribe tu nombre"
+                           Keyboard="Text"
                            x:Name="NombreAsesor"
                            Margin="10,0"></Entry>
 
@@ -124,9 +149,11 @@
                     </Label>
 
                     <Entry Placeholder="Escribe tu apellido paterno"
+                           Keyboard="Text"
                            x:Name="ApellidoPaternoAs"
                            Margin="10,0"></Entry>
                     <Entry Placeholder="Escribe tu apellido Materno"
+                           Keyboard="Text"
                            x:Name="ApellidoMaternoAs"
                            Margin="10,0"></Entry>
 
@@ -181,7 +208,10 @@
                             ItemsSource="{Binding ComunaList}"
                             ItemDisplayBinding="{Binding Nombre}"
                             SelectedItem="{Binding SelectedComuna}"/>
-                    <Label Text="{Binding Id}" IsVisible="False" x:Name="IdComunaLabel"/>
+                    
+                    <Label Text="{Binding Id}" 
+                           IsVisible="False" 
+                           x:Name="IdComunaLabel"/>
                     <Label Text="{Binding Nombre}"/>
 
 
@@ -192,6 +222,7 @@
 
                     <Entry Placeholder="Escribe el valor tu hora:"
                            x:Name="PrecioHora"
+                           Keyboard="Numeric"
                            Margin="10,0"></Entry>
 
 
@@ -236,6 +267,7 @@
 
                     <Entry Placeholder="Escribe tu Email"
                            Margin="10,0"
+                           Keyboard="Email"
                            x:Name="CorreoAsesor">
                         <Entry.Behaviors>
                             <local:EmailValidadorBehavior/>
@@ -249,6 +281,7 @@
 
                     <Entry Placeholder="Escribe tu Contraseña"
                            x:Name="ClaveAsesor"
+                           Keyboard="Text"
                            IsPassword="True"     
                            Margin="10,0">
                     </Entry>

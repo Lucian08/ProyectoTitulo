@@ -49,7 +49,7 @@ namespace ProyectoTitulo.ViewModel
             Title = string.Empty;
             try
             {
-                if (Cliente.Correo == ("") || Cliente.Contrasena == (""))
+                if (String.IsNullOrEmpty(Cliente.Correo) || String.IsNullOrEmpty(Cliente.Contrasena))
                 {
                     IsBusy = false;
                     Message = "Uno o 2 campos estan bacios";

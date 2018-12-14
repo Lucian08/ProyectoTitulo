@@ -65,13 +65,17 @@
 
             <ScrollView>
                 <StackLayout>
-                    <StackLayout>
+                    <!--<StackLayout>
                         <SearchBar Placeholder="Buscar"
-                               CancelButtonColor="Black"
-                               SearchButtonPressed="SearchBar_SearchButtonPressed">
+                                   x:Name="AsesorSearchBar"
+                                   CancelButtonColor="Black"
+                                   TextChanged="AsesorSearchBar_TextChanged"
+                                   >
+                            
                         </SearchBar>
-                    </StackLayout>
-                    <ListView ItemsSource="{Binding AsesorList}"
+                    </StackLayout>-->
+                    <ListView x:Name="AsesorListView"
+                              ItemsSource="{Binding AsesorList}"
                               HasUnevenRows="True"
                               BackgroundColor="#ecf0f1"
                               SeparatorVisibility="None"
@@ -81,21 +85,40 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Margin="6,4,6,4"
-                                                 BackgroundColor="White">
-                                        
-                                        <Label Text="{Binding Nombre}"
-                                               Margin="8"
-                                               FontAttributes="Bold"
-                                               FontSize="Medium">
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal"
+                                                     Margin="6,4,6,4"
+                                                     BackgroundColor="White">
+                                            <Image Source="Persona.png" 
+                                                       BackgroundColor="White"
+                                                       HeightRequest="30" 
+                                                       WidthRequest="50">
+
+                                            </Image>
+                                            <StackLayout Orientation="Vertical">
+
+                                                <Label Text="{Binding Nombre}"
+                                                   Margin="8"
+                                                   TextColor="#f35e20"
+                                                   FontAttributes="Bold"
+                                                   FontSize="Medium" />
+
+                                                <Label Text="{Binding Comentario}"
+                                                   TextColor="#503026"
+                                                   Margin="8,2,8,4"
+                                                   FontSize="Small"/>
+
+                                                <Label Text="{Binding Fono}"
+                                                   TextColor="#503026"
+                                                   Margin="8,2,8,4"
+                                                   FontSize="Small"/>
+                                                
+                                            </StackLayout>
                                             
-                                        </Label>
-                                        <Label Text="{Binding ApellidoPaterno}"
-                                               Margin="8,2,8,4"
-                                               FontSize="Small">
-                                            
-                                        </Label>
+                                        </StackLayout>
                                     </StackLayout>
+
+
                                 </ViewCell>
                             </DataTemplate>
                             

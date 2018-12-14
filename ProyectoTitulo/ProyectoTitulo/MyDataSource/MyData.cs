@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProyectoTitulo.MyDataSource
 {
-    
+
     public class MyData
     {
         //List<Comuna> listado =   await ServiceConnect.GetAllAsync<Comuna>("Comunas");/*Aqui se cargan todas las comunas desde la DB*/
@@ -18,42 +18,34 @@ namespace ProyectoTitulo.MyDataSource
         //}
         /*public List<Asesor> Asesors = new List<Asesor>()
         {
-
             new Asesor()
-
             {
                 Id=1,
                 Nombre="Luciano",
                 ApellidoPaterno="Alvares"
             },
-
             new Asesor()
             {
                 Id=2,
                 Nombre="Lucianito",
                 ApellidoPaterno="Alvares"
-
             }
-
         };*/
 
         List<Asesor> asesorList;
         int id;
-        string nombre;
-        public string Nombre
+        public int Id
         {
-            get { return nombre; }
+            get { return id; }
             set
             {
-                if (nombre != value)
+                if (id != value)
                 {
-                    nombre = value;
-                   
+                    id = value;
+
                 }
             }
         }
-
-        
         public List<Asesor> AsesorList
         {
             get { return asesorList; }
@@ -62,18 +54,9 @@ namespace ProyectoTitulo.MyDataSource
                 if (asesorList != value)
                 {
                     asesorList = value;
-                    
+
                 }
             }
         }
-
-        
-
-
-
-
     }
-
-    
-    
 }
